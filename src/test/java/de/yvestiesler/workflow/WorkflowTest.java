@@ -21,7 +21,7 @@ public class WorkflowTest extends AbstractProcessEngineRuleTest {
   @Test
   public void shouldExecuteHappyPath() {
     // given
-    String processDefinitionKey = "camunda-springboot-car-dealership-process";
+    String processDefinitionKey = "sellCarToCustomer";
 
     // when
     ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(processDefinitionKey);
@@ -29,8 +29,8 @@ public class WorkflowTest extends AbstractProcessEngineRuleTest {
     // then
     assertThat(processInstance).isStarted()
         .task()
-        .hasDefinitionKey("say-hello")
-        .hasCandidateUser("admin")
+        .hasDefinitionKey("Activity_1n7uj68")
+        //.hasCandidateUser("admin")
         .isNotAssigned();
   }
 
